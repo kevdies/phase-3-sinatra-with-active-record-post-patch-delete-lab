@@ -38,6 +38,9 @@ class ApplicationController < Sinatra::Base
     bakery_to_update.to_json
   end
 
-  
+  delete '/baked_goods/:id' do
+    baked_good_to_delete = BakedGood.find_by(params[:id])
+    baked_good_to_delete.delete
+  end
 
 end
